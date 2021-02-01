@@ -1,0 +1,31 @@
+<%- include('../inc/header') -%>
+
+<main>
+    <h1>Fræðslumynd­bandaleigan</h1>
+    <% dataMan.categories.forEach((category) => { %>
+        <section>
+            <div class="grid">
+                <div class="row">
+                    <h2 class="category-title"><%= category.title %></h2>
+                </div>
+                <div class="row">
+                    <% category.videos.forEach((video) => { %>
+                        <div class="col col-4 col-md-6 col-sm-12 card">
+                            <a href="test/<%= dataMan.videos[video-1].id %>" class="video-card">
+                                <div class="image">
+                                    <img src="<%= dataMan.videos[video-1].poster %>" alt="<%= dataMan.videos[video-1].title %>">
+                                    <small class="video-length"><%= locals.videoLength(dataMan.videos[video-1].duration) %></small>
+                                </div>
+                                <h3 class="bottom"><%= dataMan.videos[video-1].title %></h3>
+                                <small class="c-counter"><%= locals.timeStamp(dataMan.videos[video-1].created) %></small>
+                            </a>
+                        </div>
+                    <% }) %>
+                </div>
+                <div class="row col col-10 offset-col-1 section-underline"></div>
+            </div>
+        </section>
+    <% }) %>
+</main>
+
+<%- include('../inc/footer') -%>

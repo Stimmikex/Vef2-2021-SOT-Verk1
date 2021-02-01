@@ -1,0 +1,36 @@
+<%- include('../inc/header') -%>
+
+<main>
+    <h1 class="title grid"><%= dataMan.videos[id-1].title %></h1>
+    <div class="grid">
+        <div class="row">
+            <% dataMan.videos.forEach((video) => { %>
+                <% if(video.id == id) { %>
+                  <video class="videocontainer" controls>
+                    <source src="../<%= video.video %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <section class="grid">
+                    <h1 class="row col">Tengd myndbönd</h1>
+                    <div class="row">
+                      <% video.related.forEach((connection) => { %>
+                        <div class="card col col-4 col-md-12 card">
+                          <a href="../test/<%= dataMan.videos[connection-1].id %>">
+                            <div class="image">
+                                <img src="../<%= dataMan.videos[connection-1].poster %>" alt="<%= dataMan.videos[connection-1].title %>">
+                                <small class="video-length"><%= locals.videoLength(dataMan.videos[connection-1].duration) %></small>
+                            </div>
+                            <h3 class="bottom"><%= dataMan.videos[connection-1].title %></h3>
+                            <small class="c-counter"><%= locals.timeStamp(dataMan.videos[connection-1].created) %></small>
+                          </a>
+                        </div>
+                      <% }) %>
+                    </div>
+                  </section>
+                <% } %>
+            <% }) %>
+        </div>
+    </div>
+  </main>
+
+<%- include('../inc/footer') -%>

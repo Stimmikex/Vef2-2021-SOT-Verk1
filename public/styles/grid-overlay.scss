@@ -1,0 +1,36 @@
+/* https://css-tricks.com/building-css-grid-overlay/ */
+@import './config';
+
+:root {
+  --offset: 10px;
+  --max_width: #{$max-width};
+  --columns: #{$columns};
+  --gutter: #{$gutter};
+  --color: hsla(204, 75%, 75%, 0.25);
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(to right, var(--color), var(--color) var(--column-width), transparent var(--column-width), transparent var(--repeating-width));
+}
+
+html {
+  position: relative;
+}
+
+html::before {
+  background-image: var(--background-columns);
+  background-size: var(--background-width) 100%;
+  bottom: 0;
+  content: '';
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max_width);
+  min-height: 100vh;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - (2 * var(--offset)));
+  z-index: 1000;
+}

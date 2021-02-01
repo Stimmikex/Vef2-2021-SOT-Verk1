@@ -1,0 +1,45 @@
+@import './config';
+
+.card {
+  margin: 1rem 0;
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .c-counter {
+    margin-top: 0.25rem;
+  }
+
+  .video-length {
+    background: rgba(0, 0, 0, 0.4);
+    bottom: 10px;
+    color: $color-lightest-gray;
+    font-size: 10px;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+  }
+
+  .image {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 16rem;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+  }
+
+  .image > img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.category-title {
+  padding: 0.35em;
+}

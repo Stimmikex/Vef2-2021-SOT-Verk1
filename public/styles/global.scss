@@ -1,0 +1,84 @@
+// Sækja config
+// Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
+
+// ma breyta að vild kv d
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $color-almost-black;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: $color-almost-black;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: hidden;
+  margin: 0.5em;
+  padding: 0.5em;
+  transition: color $transition, background-color $transition;
+  word-break: initial;
+}
+
+button:hover {
+  background-color: $color-lightest-gray;
+  color: $color-almost-black;
+}
+
+button:active {
+  background-color: $color-lightest-gray;
+  color: $color-almost-black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans', 'Montaga', Georgia, serif;
+}
+
+h1 {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+h3 {
+  margin-top: 0.25rem;
+}
+
+p {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.section-underline {
+  border: 0.5px solid $color-almost-black;
+  height: 1px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+}
