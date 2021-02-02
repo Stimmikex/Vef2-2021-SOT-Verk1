@@ -2,8 +2,7 @@
   "name": "vef2-2021-verk1",
   "version": "1.0.0",
   "description": "Verkefnið felst í því að smíða vef lítinn myndbandavef sem nýtir gögn úr JSON skrá.",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/app.js",
   "scripts": {
     "test:eslint": "eslint \"./src/**/*.js\" --fix",
     "test:stylelint": "stylelint \"./public/styles/**/*.scss\" --syntax scss",
@@ -12,7 +11,8 @@
     "build": "concurrently npm:build:*",
     "dev:sass": "node-sass --source-map-embed --watch ./public/styles.scss --recursive ./dist/styles.css",
     "dev": "npm run build:sass && concurrently npm:dev:*",
-    "start": "nodemon app.js"
+    "start-dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
   },
   "author": "",
   "license": "ISC",

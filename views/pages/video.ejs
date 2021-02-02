@@ -7,7 +7,7 @@
             <% dataMan.videos.forEach((video) => { %>
                 <% if(video.id == id) { %>
                   <video class="videocontainer" controls>
-                    <source src="../<%= video.video %>" type="video/mp4">
+                    <source src="../<%= dataMan.videos[id-1].video %>" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div>
