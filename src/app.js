@@ -33,7 +33,7 @@ app.get('/test/:data?', async (req, res, next) => {
     const id = req.params.data;
     const dataMan = await fetchData();
     if (dataMan.videos[id]) {
-      res.render('pages/video', { title: 'video', id, dataMan });
+      res.render('pages/video', { title: 'Fræðslumynd­bandaleigan', id, dataMan });
     } else {
       next();
     }
